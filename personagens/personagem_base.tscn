@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://iuw1ewg3o1t0"]
+
+[ext_resource type="Script" uid="uid://bvse16pjnrruv" path="res://personagens/personagem_base.gd" id="1_bgjts"]
+
+[node name="PersonagemBase" type="CharacterBody2D" node_paths=PackedStringArray("_textura", "_animador")]
+script = ExtResource("1_bgjts")
+_textura = NodePath("Textura")
+_animador = NodePath("Animador")
+
+[node name="Textura" type="Sprite2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+
+[node name="Animador" type="AnimationPlayer" parent="."]

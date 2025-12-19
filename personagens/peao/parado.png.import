@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hjs4quqi5i0u"
-path="res://.godot/imported/parado.png-6238f7469a16f70cdb5375b30b77be49.ctex"
+path="res://.godot/imported/parado.png-0f58571407d6ef51b4ab5b1e8e5deb08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://peao/parado.png"
-dest_files=["res://.godot/imported/parado.png-6238f7469a16f70cdb5375b30b77be49.ctex"]
+source_file="res://personagens/peao/parado.png"
+dest_files=["res://.godot/imported/parado.png-0f58571407d6ef51b4ab5b1e8e5deb08.ctex"]
 
 [params]
 
