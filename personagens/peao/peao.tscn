@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmt0hxrmjjmxr"]
+[gd_scene load_steps=12 format=3 uid="uid://bmt0hxrmjjmxr"]
 
 [ext_resource type="PackedScene" uid="uid://iuw1ewg3o1t0" path="res://personagens/personagem_base.tscn" id="1_i2mmq"]
-[ext_resource type="Texture2D" uid="uid://hjs4quqi5i0u" path="res://personagens/peao/parado.png" id="2_db0dc"]
 [ext_resource type="Texture2D" uid="uid://dqc0hu1x5gcij" path="res://personagens/peao/andando.png" id="3_4fswt"]
+[ext_resource type="Texture2D" uid="uid://cwyo0jijbniie" path="res://personagens/peao/ataque_picareta.png" id="3_8c0eo"]
+[ext_resource type="Texture2D" uid="uid://gewy33m0xrjq" path="res://personagens/peao/ataque_martelo.png" id="4_4pxq6"]
+[ext_resource type="Texture2D" uid="uid://dhfenq1082wiv" path="res://personagens/peao/ataque_machado.png" id="5_uq2oe"]
+[ext_resource type="Texture2D" uid="uid://bcxcpceen6r5i" path="res://personagens/peao/ataque_faca.png" id="6_7lrjc"]
 
 [sub_resource type="Animation" id="Animation_4fswt"]
 resource_name = "parado"
@@ -12,34 +15,22 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Textura:texture")
+tracks/0/path = NodePath("Textura:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_db0dc")]
+"values": [8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Textura:hframes")
+tracks/1/path = NodePath("Textura:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textura:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -51,34 +42,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Textura:texture")
+tracks/0/path = NodePath("Textura:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_db0dc")]
+"values": [8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Textura:hframes")
+tracks/1/path = NodePath("Textura:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textura:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -93,34 +72,51 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Textura:texture")
+tracks/0/path = NodePath("Textura:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_4fswt")]
+"values": [6]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Textura:hframes")
+tracks/1/path = NodePath("Textura:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_i3rpm"]
+resource_name = "ataque"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [6]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textura:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -131,6 +127,7 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_db0dc"),
 &"andando": SubResource("Animation_ww04n"),
+&"ataque": SubResource("Animation_i3rpm"),
 &"parado": SubResource("Animation_4fswt")
 }
 
@@ -139,7 +136,7 @@ _velocidade_de_movimento = 384.0
 
 [node name="Textura" parent="." index="0"]
 position = Vector2(0, -32)
-texture = ExtResource("2_db0dc")
+texture = ExtResource("3_4fswt")
 hframes = 8
 
 [node name="Animador" parent="." index="2"]
@@ -147,3 +144,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_ww04n")
 }
 autoplay = "parado"
+
+[node name="AtaquePicareta" type="Sprite2D" parent="." index="3"]
+position = Vector2(204, 263)
+texture = ExtResource("3_8c0eo")
+
+[node name="AtaqueMartelo" type="Sprite2D" parent="." index="4"]
+position = Vector2(193, 443)
+texture = ExtResource("4_4pxq6")
+
+[node name="AtaqueMachado" type="Sprite2D" parent="." index="5"]
+position = Vector2(205, 619)
+texture = ExtResource("5_uq2oe")
+
+[node name="AtaqueFaca" type="Sprite2D" parent="." index="6"]
+position = Vector2(174, 777)
+texture = ExtResource("6_7lrjc")
