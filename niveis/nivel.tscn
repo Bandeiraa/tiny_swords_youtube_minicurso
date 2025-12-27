@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://bq8s4xjvntntk"]
+
+[ext_resource type="PackedScene" uid="uid://bmt0hxrmjjmxr" path="res://personagens/peao/peao.tscn" id="1_ovja2"]
+[ext_resource type="Texture2D" uid="uid://bi0qnimysg7sq" path="res://interface/avatar_peao_preto.png" id="2_136ie"]
+[ext_resource type="Script" uid="uid://c3lwiqsacqldy" path="res://interface/interface.gd" id="2_dgids"]
+[ext_resource type="Texture2D" uid="uid://bs1k3ebtiq2ti" path="res://interface/slot.png" id="3_7pf0v"]
+[ext_resource type="Texture2D" uid="uid://iq4qssc70gc4" path="res://interface/icone_faca.png" id="4_rwi2d"]
+[ext_resource type="Texture2D" uid="uid://ds2qckn3uuyfe" path="res://interface/icone_machado.png" id="5_dgids"]
+[ext_resource type="Texture2D" uid="uid://bpdb00wkdwph1" path="res://interface/icone_martelo.png" id="6_e4055"]
+[ext_resource type="Texture2D" uid="uid://dfkpc442fh71t" path="res://interface/icone_picareta.png" id="7_tguq8"]
+
+[node name="Nivel" type="Node2D"]
+
+[node name="Peao" parent="." instance=ExtResource("1_ovja2")]
+
+[node name="Interface" type="CanvasLayer" parent="." groups=["interface"]]
+script = ExtResource("2_dgids")
+
+[node name="Avatar" type="TextureRect" parent="Interface"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_136ie")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContainerSlots" type="HBoxContainer" parent="Interface/Avatar"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Slot1" type="TextureRect" parent="Interface/Avatar/ContainerSlots"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("3_7pf0v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconeDaArma" type="TextureRect" parent="Interface/Avatar/ContainerSlots/Slot1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rwi2d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indicador" type="ColorRect" parent="Interface/Avatar/ContainerSlots/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Slot2" type="TextureRect" parent="Interface/Avatar/ContainerSlots"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("3_7pf0v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconeDaArma" type="TextureRect" parent="Interface/Avatar/ContainerSlots/Slot2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dgids")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indicador" type="ColorRect" parent="Interface/Avatar/ContainerSlots/Slot2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Slot3" type="TextureRect" parent="Interface/Avatar/ContainerSlots"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("3_7pf0v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconeDaArma" type="TextureRect" parent="Interface/Avatar/ContainerSlots/Slot3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_e4055")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indicador" type="ColorRect" parent="Interface/Avatar/ContainerSlots/Slot3"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Slot4" type="TextureRect" parent="Interface/Avatar/ContainerSlots"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("3_7pf0v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconeDaArma" type="TextureRect" parent="Interface/Avatar/ContainerSlots/Slot4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_tguq8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indicador" type="ColorRect" parent="Interface/Avatar/ContainerSlots/Slot4"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)

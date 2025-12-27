@@ -12,3 +12,7 @@ _animador = NodePath("Animador")
 [node name="Colisao" type="CollisionShape2D" parent="."]
 
 [node name="Animador" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="animation_finished" from="Animador" to="." method="_quando_animacao_terminar"]

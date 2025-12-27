@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="TinySwordsYoutube"
+run/main_scene="uid://bq8s4xjvntntk"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [input]

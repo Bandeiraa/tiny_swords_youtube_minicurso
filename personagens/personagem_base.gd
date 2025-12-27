@@ -6,7 +6,9 @@ var _lista_de_armas: Array = [
 ]
 
 var _indice_arma_atual: int = 0
+
 var _arma_atual: String = ""
+var _path_base: String = "res://personagens/peao/"
 
 var _posso_atacar: bool = true
 
@@ -25,9 +27,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ataque") and _posso_atacar:
 		_posso_atacar = false
 		_tratar_animacoes()
-		
-	if _posso_atacar == false:
-		return
+		set_process(false)
 		
 	var _direcao: Vector2 = Input.get_vector(
 		"mover_esquerda", "mover_direita",
@@ -57,6 +57,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 				else:
 					_indice_arma_atual -= 1
 					
+			get_tree().call_group("interface", "atualizar_indicador", _indice_arma_atual)
 			_arma_atual = _lista_de_armas[_indice_arma_atual]
 			
 			
@@ -67,12 +68,23 @@ func _tratar_animacoes() -> void:
 	elif velocity.x < 0:
 		_textura.flip_h = true
 		
-	var _path_base: String = "res://personagens/peao/"
 	var _path_completo: String = ""
 	
 	if _posso_atacar == false:
 		_path_completo = _path_base + "ataque" + _arma_atual + ".png"
-		_animador.play("ataque")
+		
+		var _sufixo_animacao: String = ""
+		match _arma_atual:
+			"_machado", "_picareta":
+				_sufixo_animacao = "_6f"
+				
+			"_faca":
+				_sufixo_animacao = "_4f"
+				
+			"_martelo":
+				_sufixo_animacao = "_3f"
+				
+		_animador.play("ataque" + _sufixo_animacao)
 		
 	elif velocity:
 		_path_completo = _path_base + "andando" + _arma_atual + ".png"
@@ -83,3 +95,22 @@ func _tratar_animacoes() -> void:
 		_animador.play("parado")
 		
 	_textura.texture = load(_path_completo)
+	
+	
+func _quando_animacao_terminar(_anim_name: StringName) -> void:
+	if _anim_name.contains("ataque"):
+		_resetar_texturas()
+		_posso_atacar = true
+		set_process(true)
+		
+		
+func _resetar_texturas() -> void:
+	if velocity:
+		_textura.hframes = 6
+		_textura.texture = load(_path_base + "andando" + _arma_atual + ".png")
+		
+	else:
+		_textura.hframes = 8
+		_textura.texture = load(_path_base + "parado" + _arma_atual + ".png")
+		
+	_textura.frame = 0
